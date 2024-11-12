@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Example</title>
+  <style>
+    /* Global styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f06, #4a90e2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Container for the video */
+  .video-container {
+    position: relative;
+    width: 80%;
+    max-width: 960px;
+    background-color: #000;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Hover effect for container */
+  .video-container:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Style untuk video */
+  .video-player {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Overlay dark gradient on hover */
+  .video-container:hover .video-player {
+    opacity: 0.7;
+  }
+  
+  /* Play button custom style */
+  .video-container::before {
+    content: "►";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Show play button when hover */
+  .video-container:hover::before {
+    opacity: 1;
+  }
+  
+  /* Optional: Style for controls (optional) */
+  video::-webkit-media-controls {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+  
+  </style>
+</head>
+<body>
+
+  <div class="video-container">
+    <video class="video-player" controls>
+      <source src="unboxing.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+</body>
+</html>
